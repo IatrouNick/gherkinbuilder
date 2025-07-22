@@ -1,0 +1,56 @@
+﻿@using GherkinBuilder.Models
+@using GherkinBuilder.Services
+@inject StepLibraryService StepLibraryService
+
+<div>
+    <InputText class="form-control"
+               placeholder="Type to search..."
+               @bind-Value="searchText"
+               @oninput="FilterSteps" />
+
+    @if (FilteredSteps?.Any() == true)
+    {
+        <ul class="list-group mt-1">
+            @foreach (var step in FilteredSteps)
+            {
+                <li class="list-group-item list-group-item-action" @onclick="() => SelectStep(step)">
+                    @step.Expression
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+@code {
+    [Parameter] public StepType StepType { get; set; }
+    [Parameter] public StepDefinition? SelectedStep { get; set; }
+    [Parameter] public string? SelectedText { get; set; }
+    [Parameter] public string? Placeholder { get; set; }
+    [Parameter] public EventCallback<StepDefinition> OnStepSelected { get; set; }
+
+    private string? searchText;
+    private List<StepDefinition>? FilteredSteps;
+
+    private void FilterSteps(ChangeEventArgs e)
+    {
+        searchText = e.Value?.ToString();
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            FilteredSteps = null;
+        }
+        else
+        {
+            FilteredSteps = StepLibraryService.GetStepsByType(StepType.ToString())
+                .Where(s => s.Expression.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+
+    private async Task SelectStep(StepDefinition step)
+    {
+        searchText = step.Expression;
+        FilteredSteps = null;
+        await OnStepSelected.InvokeAsync(step);
+        searchText = "";
+    }
+}

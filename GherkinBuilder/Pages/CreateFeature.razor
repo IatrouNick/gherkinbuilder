@@ -1,0 +1,262 @@
+﻿@page "/create-feature"
+@using GherkinBuilder.Helpers
+@using GherkinBuilder.Models
+@using GherkinBuilder.Services
+@using System.Text
+@inject IJSRuntime JS
+@inject StepLibraryService StepLibraryService
+@inject NavigationManager Navigation
+
+@if (StepLibraryService.GetAllSteps().Any())
+{
+    <h5>Total steps: @StepLibraryService.GetAllSteps().Count() 
+
+    <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm">
+        <i class="bi bi-x-circle me-1"></i> Clear Form
+    </button>
+
+    </h5>
+    <h3>Create Feature File</h3>
+
+    <div class="mb-3">
+        <label for="featureName">Feature Name:</label>
+        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." />
+    </div>
+
+    <div class="mb-3">
+        <label for="scenarioName">Scenario Name:</label>
+        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." />
+    </div>
+
+    <h3>Given</h3>
+    <SearchStep StepType="StepType.Given"
+                OnStepSelected="AddGivenStep" />
+
+    @if (SelectedGivenSteps.Any())
+    {
+        @for (int i = 0; i < SelectedGivenSteps.Count; i++)
+        {
+            var keyword = i == 0 ? "Given" : "And";
+            var stepIndex = i; // ✅ capture the correct index
+
+            <li class="list-group-item d-flex align-items-center">
+                <button class="btn btn-sm btn-outline-danger me-2"
+                        title="Remove step"
+                        @onclick="() => RemoveGivenStep(stepIndex)">
+                    🗑
+                </button>
+                <span>@($"{keyword} {SelectedGivenSteps[stepIndex].Expression}")</span>
+            </li>
+        }
+    }   
+
+    <h3>When</h3>
+    <SearchStep StepType="StepType.When"
+                OnStepSelected="AddWhenStep" />
+
+    @if (SelectedWhenSteps.Any())
+    {
+        @for (int i = 0; i < SelectedWhenSteps.Count; i++)
+        {
+            var keyword = i == 0 ? "When" : "And";
+            var stepIndex = i; //capture the correct index
+
+            <li class="list-group-item d-flex align-items-center">
+                <button class="btn btn-sm btn-outline-danger me-2"
+                title="Remove step"
+                @onclick="() => RemoveWhenStep(stepIndex)">
+                    🗑
+                </button>
+                <span>@($"{keyword} {SelectedWhenSteps[stepIndex].Expression}")</span>
+            </li>
+        }
+
+    }
+
+    <h3>Then</h3>
+    <SearchStep StepType="StepType.Then"
+                OnStepSelected="AddThenStep" />
+
+    @if (SelectedThenSteps.Any())
+    {
+        @for (int i = 0; i < SelectedThenSteps.Count; i++)
+        {
+            var keyword = i == 0 ? "Then" : "And";
+            var stepIndex = i; // ✅ capture the correct index
+
+            <li class="list-group-item d-flex align-items-center">
+                <button class="btn btn-sm btn-outline-danger me-2"
+                        title="Remove step"
+                        @onclick="() => RemoveThenStep(stepIndex)">
+                    🗑
+                </button>
+                <span>@($"{keyword} {SelectedThenSteps[stepIndex].Expression}")</span>
+            </li>
+        }
+    }
+
+    <button class="btn btn-success mt-3"
+            @onclick="DownloadFeatureFile"
+            disabled="@(!HasAnySteps)">
+        Download Feature File
+    </button>
+}
+
+@code {
+
+    #region Intialize
+    private List<StepDefinition> GivenSteps {   get; set; } = new();
+    private List<StepDefinition> WhenSteps { get; set; } = new();
+    private List<StepDefinition> ThenSteps { get; set; } = new();
+
+    private string FeatureName { get; set; } = "Auto-generated feature";
+    private string ScenarioName { get; set; } = "Auto-generated scenario";
+
+    private List<StepDefinition> SelectedGivenSteps { get; set; } = new();
+    private List<StepDefinition> SelectedWhenSteps { get; set; } = new();
+    private List<StepDefinition> SelectedThenSteps { get; set; } = new();
+
+    private bool _shouldRedirect = false;
+    private bool _shouldDownload = false;
+
+    protected override void OnInitialized()
+    {
+        if (!StepLibraryService.GetAllSteps().Any())
+        {
+            _shouldRedirect = true;
+        }
+    }
+    #endregion
+
+    #region Add steps to list
+    private void AddGivenStep(StepDefinition step)
+    {
+        SelectedGivenSteps.Add(step);
+    }
+
+    private void AddWhenStep(StepDefinition step)
+    {
+        SelectedWhenSteps.Add(step);
+    }
+
+    private void AddThenStep(StepDefinition step)
+    {
+        SelectedThenSteps.Add(step);
+    }
+    #endregion
+    
+    #region Remove Row
+    private void RemoveGivenStep(int index)
+    {
+        if (index>= 0)
+        {
+            SelectedGivenSteps.RemoveAt(index);
+            StateHasChanged();
+        }
+    }
+
+    private void RemoveWhenStep(int index)
+    {
+        if (index >= 0)
+        {
+            SelectedWhenSteps.RemoveAt(index);
+            StateHasChanged();
+        }
+    }
+    private void RemoveThenStep(int index)
+    {
+        if (index >= 0)
+        {
+            SelectedThenSteps.RemoveAt(index);
+            StateHasChanged();
+        }
+    }
+    #endregion
+
+    #region Download file
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (_shouldDownload)
+        {
+            _shouldDownload = false;
+            var content = GenerateFeatureFileContent();
+            await JS.InvokeVoidAsync("downloadFile", "generated.feature", content);
+        }
+    }
+    
+    private bool HasAnySteps =>
+    SelectedGivenSteps.Any() ||
+    SelectedWhenSteps.Any() ||
+    SelectedThenSteps.Any();
+
+    private async Task DownloadFeatureFile()
+    {
+        var content = GenerateFeatureFileContent();
+        await JS.InvokeVoidAsync("downloadFile", "generated.feature", content);
+    }
+
+    private string GenerateFeatureFileContent()
+    {
+        var sb = new StringBuilder();
+
+        sb.AppendLine($"Feature: {FeatureName}");
+        sb.AppendLine();
+        sb.AppendLine($"  Scenario: {ScenarioName}");
+
+        AppendSteps(sb, SelectedGivenSteps, "Given");
+        AppendSteps(sb, SelectedWhenSteps, "When");
+        AppendSteps(sb, SelectedThenSteps, "Then");
+
+        return sb.ToString();
+    }
+
+    private void AppendSteps(StringBuilder sb, List<StepDefinition> steps, string keyword)
+    {
+        if (steps.Count == 0)
+            return;
+
+        sb.Append($"    {keyword} ");
+        sb.AppendLine(steps[0].Expression);
+
+        for (int i = 1; i < steps.Count; i++)
+        {
+            sb.Append("    And ");
+            sb.AppendLine(steps[i].Expression);
+        }
+    }
+
+    #endregion
+
+    #region Clear form
+    private void ResetForm()
+    {
+        FeatureName = "Auto-generated feature";
+        ScenarioName = "Auto-generated scenario";
+        SelectedGivenSteps.Clear();
+        SelectedWhenSteps.Clear();
+        SelectedThenSteps.Clear();
+    }
+    #endregion
+}
+<style>
+    .text-cucumber {
+        color: #6AAA64;
+    }
+
+    code.text-warning {
+        color: #e0a800;
+    }
+
+    body {
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(to bottom right, #f8fdf7, #d8f5e1);
+    }
+
+
+    footer {
+        font-size: 0.95rem;
+        color: #6AAA64;
+    }
+</style>

@@ -1,0 +1,328 @@
+[
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user is on the login page",
+    "Parameters": [],
+    "Folder": "Authentication"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user enters valid credentials",
+    "Parameters": [],
+    "Folder": "Authentication"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user should see the dashboard",
+    "Parameters": [],
+    "Folder": "Authentication"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user with (.*) on the homepage",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Nick"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user clicks the login button",
+    "Parameters": [],
+    "Folder": "Nick"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user is loged in for (.*) minutes",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Nick"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "^a popup will be shown with (seconds|minutes)",
+    "Parameters": [],
+    "Folder": "Nick"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user is on the registration page",
+    "Parameters": [],
+    "Folder": "Registration"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user enters name \\\\\\\"(.*)\\\\\\\" and email \\\\\\\"(.*)\\\\\\\"",
+    "Parameters": [
+      "string",
+      "string"
+    ],
+    "Folder": "Registration"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the registration should be successful",
+    "Parameters": [],
+    "Folder": "Registration"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user is on the homepage",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the dashboard should be visible",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the system is initialized",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the system is initialized",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the system is initialized",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user selects the {string} plan",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user selects the {string} plan",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user selects the {string} plan",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user sees a confirmation with price {decimal}",
+    "Parameters": [
+      "decimal"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user sees a confirmation with price {decimal}",
+    "Parameters": [
+      "decimal"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user sees a confirmation with price {decimal}",
+    "Parameters": [
+      "decimal"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the form is submitted with username {string} and age {int}",
+    "Parameters": [
+      "string",
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the form is submitted with username {string} and age {int}",
+    "Parameters": [
+      "string",
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the form is submitted with username {string} and age {int}",
+    "Parameters": [
+      "string",
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the system should respond in less than {int} ms",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the system should respond in less than {int} ms",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the system should respond in less than {int} ms",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the API returns code {int} and message {string}",
+    "Parameters": [
+      "int",
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the result should contain {string} and amount {decimal}",
+    "Parameters": [
+      "string",
+      "decimal"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user is verified: {bool}",
+    "Parameters": [
+      "bool"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user balance is {double}",
+    "Parameters": [
+      "double"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the user balance is {double}",
+    "Parameters": [
+      "double"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user balance is {double}",
+    "Parameters": [
+      "double"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the flag is {bool}",
+    "Parameters": [
+      "bool"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the config value is {string}",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the launch date is {DateTime}",
+    "Parameters": [
+      "DateTime"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the button is disabled",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the cart has (\\\\d+) items",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "When",
+    "Expression": "the payment method is \\\\\\\"(.*)\\\\\\\"",
+    "Parameters": [
+      "string"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user sees the error code (\\\\d{3})",
+    "Parameters": [
+      "int"
+    ],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the string contains \\\"quotes\\\" and special chars #@!",
+    "Parameters": [],
+    "Folder": "Rest"
+  },
+  {
+    "StepDefinitionType": "Given",
+    "Expression": "the user has an active subscription",
+    "Parameters": [],
+    "Folder": "Subscription"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the user should be able to cancel the subscription",
+    "Parameters": [],
+    "Folder": "Subscription"
+  },
+  {
+    "StepDefinitionType": "Then",
+    "Expression": "the balance should be (\\\\d+\\\\.\\\\d{2})",
+    "Parameters": [
+      "decimal"
+    ],
+    "Folder": "Subscription"
+  }
+]
