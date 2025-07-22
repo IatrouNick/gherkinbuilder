@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GherkinBuilder",
   "resources": {
-    "hash": "sha256-wjwE21X48ggBcR6VExUBc2kOGG7tO2H5YEsFZHqpKpQ=",
+    "hash": "sha256-+AkMIy/Q/6D1mAYkBrXdRFH8WFvIGWhIyf5CQZlsVkw=",
     "jsModuleNative": {
       "dotnet.native.8.0.18.td341apd3g.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "GherkinBuilder.wasm": "sha256-5Gm6WNy1XFztYNcuLxeLAx5HDM7AFq7bpvez++3+iP0=",
+      "GherkinBuilder.wasm": "sha256-hy///uYjiPQ1bOQX/bhGwXCWjPHsi4Lr/GR075pgmZc=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-v/j+cZzy2kUUn1vF7Q5cRFYNKkGKZBGfJZ1PTNYX5sQ=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-gALcfDNpIrEXSOBva2cFB+n1tPslDFhlvrRkJTRS//U=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-Tr+Zmxln1h/iEhjWqn+pfZZ+vo4s5oZho+uPFeX7tlY=",
