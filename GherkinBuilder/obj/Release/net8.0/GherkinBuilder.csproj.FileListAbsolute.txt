@@ -1023,9 +1023,6 @@ C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\404z6df1zf-tptq2av103.gz
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\io2bqal0w0-lfu7j35m59.gz
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\i6l1b2uyxp-oyz0vx2fzb.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\ao8mfh9gq6-8dyisicucw.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\00o88h9mjx-cs84saragi.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\b0fa8q6grc-xd1njvwt4h.gz
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\staticwebassets.build.json
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\staticwebassets.build.json.cache
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\staticwebassets.development.json
@@ -1035,3 +1032,6 @@ C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\refint\GherkinBuilder.dll
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\GherkinBuilder.pdb
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\ref\GherkinBuilder.dll
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\ao8mfh9gq6-bcw7jmqfha.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\00o88h9mjx-iolr44ti5q.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\b0fa8q6grc-fb7587w0u6.gz

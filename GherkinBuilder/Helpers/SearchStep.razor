@@ -6,7 +6,8 @@
     <InputText class="form-control"
                placeholder="Type to search..."
                @bind-Value="searchText"
-               @oninput="FilterSteps" />
+               @oninput="FilterSteps" 
+               @attributes="AllOtherAttributes" />
 
     @if (FilteredSteps?.Any() == true)
     {
@@ -27,6 +28,9 @@
     [Parameter] public string? SelectedText { get; set; }
     [Parameter] public string? Placeholder { get; set; }
     [Parameter] public EventCallback<StepDefinition> OnStepSelected { get; set; }
+
+    [Parameter(CaptureUnmatchedValues = true)]
+    public Dictionary<string, object> AllOtherAttributes { get; set; }
 
     private string? searchText;
     private List<StepDefinition>? FilteredSteps;

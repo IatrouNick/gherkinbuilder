@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GherkinBuilder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+695d438f4e376bf077b9809982977031929a02d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57b8b8ed477542c10298c58ae9a98c0d761cc701")]
 [assembly: System.Reflection.AssemblyProductAttribute("GherkinBuilder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GherkinBuilder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

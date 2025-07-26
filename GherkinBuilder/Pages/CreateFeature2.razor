@@ -1,4 +1,4 @@
-﻿@page "/create-feature"
+﻿@page "/create-feature2"
 @using GherkinBuilder.Helpers
 @using GherkinBuilder.Models
 @using GherkinBuilder.Services
@@ -9,102 +9,89 @@
 
 @if (StepLibraryService.GetAllSteps().Any())
 {
-    <h5>
-        Total steps: @StepLibraryService.GetAllSteps().Count()
+    <h5>Total steps: @StepLibraryService.GetAllSteps().Count()
 
-        <button class="btn btn-outline-danger mt-2 ms-2"
-                @onclick="ResetForm"
-                data-testid="clear-form-button">
-            <i class="bi bi-x-circle me-1"></i> Clear Form
-        </button>
+        <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm">
+        <i class="bi bi-x-circle me-1"></i> Clear Form
+    </button>
 
     </h5>
     <h3>Create Feature File</h3>
 
     <div class="mb-3">
         <label for="featureName">Feature Name:</label>
-        <input id="featureName" class="form-control"
-               @bind="FeatureName"
-               placeholder="Enter feature name..."
-               data-testid="feature-name-input" />
+        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." />
     </div>
 
     <div class="mb-3">
         <label for="scenarioName">Scenario Name:</label>
-        <input id="scenarioName" class="form-control"
-               @bind="ScenarioName"
-               placeholder="Enter scenario name..."
-               data-testid="scenario-name-input" />
+        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." />
     </div>
 
     <h3>Given</h3>
     <SearchStep StepType="StepType.Given"
                 OnStepSelected="AddGivenStep"
-                data-testid="given-search-step" />
+                 />
 
     @if (SelectedGivenSteps.Any())
     {
         @for (int i = 0; i < SelectedGivenSteps.Count; i++)
         {
             var keyword = i == 0 ? "Given" : "And";
-            var stepIndex = i;
+            var stepIndex = i; // ✅ capture the correct index
 
-            <li class="list-group-item d-flex align-items-center"
-                data-testid="given-step-@i">
+            <li class="list-group-item d-flex align-items-center">
                 <button class="btn btn-sm btn-outline-danger me-2"
                         title="Remove step"
-                        @onclick="() => RemoveGivenStep(stepIndex)"
-                        data-testid="remove-given-@i">
+                        @onclick="() => RemoveGivenStep(stepIndex)">
+
                     🗑
                 </button>
                 <span>@($"{keyword} {SelectedGivenSteps[stepIndex].Expression}")</span>
             </li>
         }
-    }
+    }   
 
     <h3>When</h3>
     <SearchStep StepType="StepType.When"
                 OnStepSelected="AddWhenStep"
-                data-testid="when-search-step" />
+                 />
 
     @if (SelectedWhenSteps.Any())
     {
         @for (int i = 0; i < SelectedWhenSteps.Count; i++)
         {
             var keyword = i == 0 ? "When" : "And";
-            var stepIndex = i;
+            var stepIndex = i; //capture the correct index
 
-            <li class="list-group-item d-flex align-items-center"
-                data-testid="when-step-@i">
+            <li class="list-group-item d-flex align-items-center">
                 <button class="btn btn-sm btn-outline-danger me-2"
-                        title="Remove step"
-                        @onclick="() => RemoveWhenStep(stepIndex)"
-                        data-testid="remove-when-@i">
+                title="Remove step"
+                @onclick="() => RemoveWhenStep(stepIndex)">
                     🗑
                 </button>
                 <span>@($"{keyword} {SelectedWhenSteps[stepIndex].Expression}")</span>
             </li>
         }
+
     }
 
     <h3>Then</h3>
     <SearchStep StepType="StepType.Then"
                 OnStepSelected="AddThenStep"
-                data-testid="then-search-step" />
+                 />
 
     @if (SelectedThenSteps.Any())
     {
         @for (int i = 0; i < SelectedThenSteps.Count; i++)
         {
             var keyword = i == 0 ? "Then" : "And";
-            var stepIndex = i;
+            var stepIndex = i; // ✅ capture the correct index
 
-            <li class="list-group-item d-flex align-items-center"
-                data-testid="then-step-@i">
+            <li class="list-group-item d-flex align-items-center">
                 <button class="btn btn-sm btn-outline-danger me-2"
                         title="Remove step"
-                        @onclick="() => RemoveThenStep(stepIndex)"
-                        data-testid="remove-then-@i">
+                        @onclick="() => RemoveThenStep(stepIndex)">
                     🗑
                 </button>
                 <span>@($"{keyword} {SelectedThenSteps[stepIndex].Expression}")</span>
@@ -115,11 +102,10 @@
     <button class="btn btn-success mt-3"
             @onclick="DownloadFeatureFile"
             disabled="@(!HasAnySteps)"
-            data-testid="download-feature-btn">
+            >
         Download Feature File
     </button>
 }
-
 
 @code {
 
