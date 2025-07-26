@@ -11,7 +11,7 @@
 {
     <h5>Total steps: @StepLibraryService.GetAllSteps().Count()
 
-        <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm" data-testid="clear-form-button">
+        <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm">
         <i class="bi bi-x-circle me-1"></i> Clear Form
     </button>
 
@@ -20,18 +20,18 @@
 
     <div class="mb-3">
         <label for="featureName">Feature Name:</label>
-        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." data-testid="feature-name-input" />
+        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." />
     </div>
 
     <div class="mb-3">
         <label for="scenarioName">Scenario Name:</label>
-        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." data-testid="scenario-name-input" />
+        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." />
     </div>
 
     <h3>Given</h3>
     <SearchStep StepType="StepType.Given"
                 OnStepSelected="AddGivenStep"
-                data-testid="given-search-step" />
+                 />
 
     @if (SelectedGivenSteps.Any())
     {
@@ -55,7 +55,7 @@
     <h3>When</h3>
     <SearchStep StepType="StepType.When"
                 OnStepSelected="AddWhenStep"
-                data-testid="when-search-step" />
+                 />
 
     @if (SelectedWhenSteps.Any())
     {
@@ -79,7 +79,7 @@
     <h3>Then</h3>
     <SearchStep StepType="StepType.Then"
                 OnStepSelected="AddThenStep"
-                data-testid="then-search-step" />
+                 />
 
     @if (SelectedThenSteps.Any())
     {
@@ -102,7 +102,7 @@
     <button class="btn btn-success mt-3"
             @onclick="DownloadFeatureFile"
             disabled="@(!HasAnySteps)"
-            data-testid="download-feature-btn">
+            >
         Download Feature File
     </button>
 }

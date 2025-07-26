@@ -1033,6 +1033,6 @@ C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\GherkinBuilder.pdb
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\ref\GherkinBuilder.dll
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\GherkinBuilder.sourcelink.json
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\ao8mfh9gq6-cnfz67enom.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\00o88h9mjx-rh4uiv3vmj.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\b0fa8q6grc-2vdjysb8pq.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\ao8mfh9gq6-fjogeycl0b.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\00o88h9mjx-x9cp2rqqof.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Debug\net8.0\compressed\b0fa8q6grc-oi5aljakab.gz
