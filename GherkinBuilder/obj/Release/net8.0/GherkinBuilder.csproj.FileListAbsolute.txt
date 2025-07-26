@@ -1032,6 +1032,6 @@ C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\refint\GherkinBuilder.dll
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\GherkinBuilder.pdb
 C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\ref\GherkinBuilder.dll
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\ao8mfh9gq6-bcw7jmqfha.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\00o88h9mjx-iolr44ti5q.gz
-C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\b0fa8q6grc-fb7587w0u6.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\ao8mfh9gq6-hqk7ptc694.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\00o88h9mjx-eiwb4vev1o.gz
+C:\Users\NIck iatrou\source\repos\GherkinBuilder\GherkinBuilder\obj\Release\net8.0\compressed\b0fa8q6grc-qhixprs5ia.gz

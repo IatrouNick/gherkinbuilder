@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GherkinBuilder",
   "resources": {
-    "hash": "sha256-xdlHgkFFXPg2fZ0niejnn/VOhVlNhyKOQBF9dgta7OM=",
+    "hash": "sha256-2JGzNCyPjezijZtELWD9wxz8qgGUQvstdj7ioF7X/Ew=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -36,7 +36,7 @@
       "System.Collections.Concurrent.wasm": "sha256-wGrqnOQA5w8CxF54i8/VH/fqboKBy0495CLtrCOWLfw=",
       "System.Collections.NonGeneric.wasm": "sha256-0jjAKQE8AI9Z8pM+l9giojhaoXmXhxv0jCkZl+b6g3k=",
       "System.Collections.Specialized.wasm": "sha256-JDwWFZP6VKUikuiYR77oR/60arIZg2agB3oAL/hwdMQ=",
-      "System.Collections.wasm": "sha256-dGH7jYw/DitgRZt49/Abm3G3Ly7PiDFjHq0RCy2etrg=",
+      "System.Collections.wasm": "sha256-jo2H0g5bMNwSGAVyBXfXnwz/K1bGQ8L9BOgrRJy7HYQ=",
       "System.ComponentModel.Primitives.wasm": "sha256-D8eA/ugDhdTQKdjK10/mxhhpDkS5W93TcJkgiOFt8/Y=",
       "System.ComponentModel.TypeConverter.wasm": "sha256-D9u1vGspaUMBpJY/n1vdrqp0lxo0xktkJX/sv5aawP8=",
       "System.ComponentModel.wasm": "sha256-lRbXroqpgiwkr4tkgvfvB62KcB02uGaIE18tqI0d/iY=",
@@ -51,13 +51,13 @@
       "System.Private.Uri.wasm": "sha256-7ziFiAvz5X0Pzhggw1agXpAjqMK0eskeEZFZKe0HwVE=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-JzU4flvPA860j7hskxU8cL5Pt/jaIoczxFLaQ2YTgjk=",
       "System.Runtime.Serialization.Primitives.wasm": "sha256-7poSABrrfvBFQ2ARdgp4RCU0iAHJWcpDZ0EjcALVDEs=",
-      "System.Runtime.wasm": "sha256-MIJB4wwkJCLCwPULlLpLGzA3l2zrATroyf2wdrb+uiU=",
+      "System.Runtime.wasm": "sha256-aLxLhIgndALq2vtXfEz9uJGBofbNxBQSXdOGTTNJ/sY=",
       "System.Text.Encodings.Web.wasm": "sha256-TxId0lcB72W7M6URyCSyALsnP6TpMOt7+sQfz5jfiwQ=",
       "System.Text.Json.wasm": "sha256-viQj81yh+tBEEWFeHUABkbaiagNJxs2wgv2BdkWZfjU=",
       "System.Text.RegularExpressions.wasm": "sha256-W99KPQN5iMqUVkrz0DReZVqwKZhhZ/4FZT0RhzAV2As=",
       "System.wasm": "sha256-n/f5afy4u9cEBgTcizWUZ+dkLRFdsZkcUvyhNiEyiq8=",
       "System.Private.CoreLib.wasm": "sha256-Vz9X6sPdqaJ0/0z62vD+xNHwk6gqBL7S7TN+ZoZ8mIw=",
-      "GherkinBuilder.wasm": "sha256-hfWSfTr42kaag0kpXosXp5j8Hv+lErDV6+4RJUuKywE="
+      "GherkinBuilder.wasm": "sha256-ufF9MHYG3LV7ItPNh1/AeLVXLBfuiR/BAtTHEgmfzyw="
     }
   },
   "cacheBootResources": true,
