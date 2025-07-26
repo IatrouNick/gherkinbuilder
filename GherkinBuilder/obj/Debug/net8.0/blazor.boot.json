@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GherkinBuilder",
   "resources": {
-    "hash": "sha256-N5dKbGmeehlV4XEm1K+EXH3qydup/mIwDUcwKXYgEBU=",
+    "hash": "sha256-YRZKVorFkRNkPfFfRA7Z9G43yY/DJIefEDpzPsqAAyQ=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1QpKPnxEuRCElzcp+e3MrovJeAJkuzqKmRQay/6Aa08="
     },
@@ -209,10 +209,10 @@
       "mscorlib.wasm": "sha256-UnQd0YPXNpwbXsKqO8RAqgUVuwZsSpprfAIPpdV/y1Q=",
       "netstandard.wasm": "sha256-/QbD8JDZyYwfyk89W3qJL3HTAINDCVziZIySHIZcDhw=",
       "System.Private.CoreLib.wasm": "sha256-oBqNgH7R24FqGbaL3XnfQDqn3rk28jERFosgAryKT6U=",
-      "GherkinBuilder.wasm": "sha256-d4nRHuR/6bkWds4+kqsDYTJ5Ct5b9kjMXO67PYtlZgI="
+      "GherkinBuilder.wasm": "sha256-COQHBni/vBuoBsuyoyyKEWPcM1pu3zxSWCCV54ZEHBY="
     },
     "pdb": {
-      "GherkinBuilder.pdb": "sha256-02aqUIjE463oXpsce8GA3GjSlRr/D+xpexdeCwtOQM4="
+      "GherkinBuilder.pdb": "sha256-wW+KCJ37hh+p0Pi8tdYORGUF6F9pKCjTWEHKQv9rDRY="
     }
   },
   "cacheBootResources": true,

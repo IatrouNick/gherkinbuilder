@@ -9,9 +9,9 @@
 
 @if (StepLibraryService.GetAllSteps().Any())
 {
-    <h5>Total steps: @StepLibraryService.GetAllSteps().Count() 
+    <h5>Total steps: @StepLibraryService.GetAllSteps().Count()
 
-    <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm">
+        <button class="btn btn-outline-danger mt-2 ms-2" @onclick="ResetForm" data-testid="clear-form-button">
         <i class="bi bi-x-circle me-1"></i> Clear Form
     </button>
 
@@ -20,17 +20,18 @@
 
     <div class="mb-3">
         <label for="featureName">Feature Name:</label>
-        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." />
+        <input id="featureName" class="form-control" @bind="FeatureName" placeholder="Enter feature name..." data-testid="feature-name-input" />
     </div>
 
     <div class="mb-3">
         <label for="scenarioName">Scenario Name:</label>
-        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." />
+        <input id="scenarioName" class="form-control" @bind="ScenarioName" placeholder="Enter scenario name..." data-testid="scenario-name-input" />
     </div>
 
     <h3>Given</h3>
     <SearchStep StepType="StepType.Given"
-                OnStepSelected="AddGivenStep" />
+                OnStepSelected="AddGivenStep"
+                data-testid="given-search-step" />
 
     @if (SelectedGivenSteps.Any())
     {
@@ -43,6 +44,7 @@
                 <button class="btn btn-sm btn-outline-danger me-2"
                         title="Remove step"
                         @onclick="() => RemoveGivenStep(stepIndex)">
+
                     🗑
                 </button>
                 <span>@($"{keyword} {SelectedGivenSteps[stepIndex].Expression}")</span>
@@ -52,7 +54,8 @@
 
     <h3>When</h3>
     <SearchStep StepType="StepType.When"
-                OnStepSelected="AddWhenStep" />
+                OnStepSelected="AddWhenStep"
+                data-testid="when-search-step" />
 
     @if (SelectedWhenSteps.Any())
     {
@@ -75,7 +78,8 @@
 
     <h3>Then</h3>
     <SearchStep StepType="StepType.Then"
-                OnStepSelected="AddThenStep" />
+                OnStepSelected="AddThenStep"
+                data-testid="then-search-step" />
 
     @if (SelectedThenSteps.Any())
     {
@@ -97,7 +101,8 @@
 
     <button class="btn btn-success mt-3"
             @onclick="DownloadFeatureFile"
-            disabled="@(!HasAnySteps)">
+            disabled="@(!HasAnySteps)"
+            data-testid="download-feature-btn">
         Download Feature File
     </button>
 }
